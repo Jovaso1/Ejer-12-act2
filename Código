@@ -1,0 +1,28 @@
+package ejer.pkg12.act2;
+import java.util.Scanner;
+public class Ejer12Act2 {
+    public static void main(String[] args) {
+        double horas_sem, horas_ex, valor_hora, doble, triple, sueldo;
+        String nombre;
+        Scanner teclado = new Scanner(System.in);
+        
+        System.out.print("Nombres: ");
+        nombre = teclado.nextLine();
+        System.out.println("Horas por semana: ");
+        horas_sem = teclado.nextDouble();
+        System.out.println("Valor por hora: ");
+        valor_hora = teclado.nextDouble();
+        
+        if (horas_sem > 40 && horas_sem < 48){
+            doble = horas_sem -40;
+            sueldo = 40 * valor_hora + (doble*valor_hora*2);
+        }else if (horas_sem < 40){
+            sueldo = horas_sem*valor_hora;            
+        }else{
+            triple = horas_sem - 48;
+            sueldo = 40* valor_hora + (valor_hora*8*2) + (triple * valor_hora * 3);
+        }
+        System.out.println("El sueldo es: " + sueldo);
+    }
+    
+}
